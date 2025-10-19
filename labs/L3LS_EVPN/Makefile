@@ -16,19 +16,19 @@ build-site-1: ## Build Configs
 
 .PHONY: deploy-site-1
 deploy-site-1: ## Deploy Configs via eAPI
-	ansible-playbook playbooks/deploy.yml -i sites/site_1/inventory.yml -e "target_hosts=SITE1_FABRIC"
+	ansible-playbook playbooks/deploy.yml -i sites/site_1/inventory.yml -e "target_hosts=SITE1_FABRIC" -vvvv
 
 .PHONY: cvp-legacy-site-1
 cvp-legacy-site-1: ## Deploy Configs via CloudVision Legacy Network Provisioning
-	ansible-playbook playbooks/cvp-legacy.yml -i sites/site_1/inventory.yml -e "target_hosts=SITE1_FABRIC"
+	ansible-playbook playbooks/cvp-legacy.yml -i sites/site_1/inventory.yml -e "target_hosts=SITE1_FABRIC" -vvvv
 
 .PHONY: cvp-site-1
 cvp-site-1: ## Deploy Configs via CloudVision Static Configuration Studio
-	ansible-playbook playbooks/cvp.yml -i sites/site_1/inventory.yml -e "target_hosts=SITE1_FABRIC"
+	ansible-playbook playbooks/cvp.yml -i sites/site_1/inventory.yml -e "target_hosts=SITE1_FABRIC" -vvvv
 
 .PHONY: validate-site-1
 validate-site-1: ## Validate network state
-	ansible-playbook playbooks/validate.yml -i sites/site_1/inventory.yml -e "target_hosts=SITE1_FABRIC"
+	ansible-playbook playbooks/validate.yml -i sites/site_1/inventory.yml -e "target_hosts=SITE1_FABRIC" -vvvv
 
 ########################################################
 # Site 2
